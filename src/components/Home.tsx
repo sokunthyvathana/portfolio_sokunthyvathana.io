@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { Github, Mail, Phone } from 'lucide-react';
+import { Github, Mail } from 'lucide-react';
+import profileImg from '../assets/profile.jpg';
 
 const Home: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -57,7 +58,7 @@ const Home: React.FC = () => {
       gsap.fromTo('.skill-progress',
         { strokeDasharray: '0 176' },
         { 
-          strokeDasharray: (index, target) => {
+          strokeDasharray: (_index, target): string => {
             const skillLevel = parseInt(target.parentElement.parentElement.querySelector('span').textContent);
             return `${skillLevel * 1.76} 176`;
           },
@@ -129,14 +130,14 @@ const Home: React.FC = () => {
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
               <img
-                ref={profileRef}
-                src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=2"
-                alt="Sokunthy Vathana Profile"
-                className="w-64 h-64 lg:w-80 lg:h-80 rounded-full object-cover border-4 border-blue-500 shadow-2xl"
+              ref={profileRef}
+              src={profileImg}
+              alt="Sokunthy Vathana Profile"
+              className="w-64 h-64 lg:w-80 lg:h-80 rounded-full object-cover border-4 border-blue-500 shadow-2xl"
               />
               {/* Decorative elements */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-400 to-purple-600 rounded-full blur opacity-20 animate-pulse"></div>
-              <div className="absolute top-4 right-4 w-6 h-6 bg-green-400 rounded-full border-4 border-white shadow-lg"></div>
+              {/* <div className="absolute -inset-4 bg-gradient-to-r from-blue-400 to-purple-600 rounded-full blur opacity-20 animate-pulse"></div>
+              <div className="absolute top-4 right-4 w-6 h-6 bg-green-400 rounded-full border-4 border-white shadow-lg"></div> */}
             </div>
           </div>
         </div>
@@ -174,7 +175,7 @@ const Home: React.FC = () => {
               { name: 'Tailwind CSS', level: 88, icon: '💨' },
               { name: 'GNS3', level: 75, icon: '🌐' },
               { name: 'Network Admin', level: 82, icon: '🔧' },
-              { name: 'Ubuntu Server', level: 78, icon: '🐧' },
+              { name: 'Ubuntu Server', level: 88, icon: '🐧' },
               { name: 'Adobe Creative', level: 85, icon: '🎭' }
             ].map((skill, index) => (
               <div

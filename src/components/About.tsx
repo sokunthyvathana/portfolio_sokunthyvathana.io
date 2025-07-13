@@ -66,7 +66,7 @@ const About: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <div className="space-y-6">
             <p className="about-text text-lg text-gray-300 leading-relaxed">
-              I'm Sokunthy Vathana, a passionate third-year IT student at SETEC Institute in Phnom Penh, Cambodia. 
+              I'm Sokunthy Vathana, a passionate third-year MANAGEMENT INFORMATION SYSTEMS student at SETEC Institute in Phnom Penh, Cambodia. 
               My journey in technology spans across multiple domains, with a strong focus on network engineering 
               and modern web development.
             </p>
